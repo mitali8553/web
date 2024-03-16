@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Signup{% endblock title %} 
+{% block content %}
+
+
+<div class="card bg-#495057 text-black "><br>
+ 
+  {% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+ <strong>{{message}}</strong>
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+  <center><h3 class-"text-dark "> <i><b>Sign Up</i></b></h3></center>
+ <center> 
+<form action="/authentication/signup/" method="post">{% csrf_token %}
+  <br>
+
+  <label for="email">Email</label>
+  <div class="form-group">
+    <input type="email" class="form control p-1" id="email" name="email" required>
+    </div>
+    <label for="pass1">Password</label>
+    <div class="form-group">
+      <input type="Password" class="form control p-1" id="pass1" name="pass1" required>
+    </div>
+    <label for="pass2"> Confirm Password</label>
+    <div class-"form-group">
+      <input type="Password" class="form control p-1" id="pass2" name="pass2" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-dark">Sign-In</button>
+    <br>
+    <br>
+    Already User? <a href="authentication/login">Log-in</a>
+  </br>
+</center>
+  </form>
+</div>
+</div>
+  
+  {% endblock content %} 
